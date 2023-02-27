@@ -22,7 +22,7 @@
         Depth first search = dfs
         Write a program to implement insertion operation on binary search tree and also print inorder traversal tree = insertionofbinarytree
     </pre>
-    <pre class="matrixmultiplicationinput">
+    <pre id="matrixmultiplicationinput">
 print("Enter order of 1st matrix:") a,b = list(map(int,input().split())) 
 print("Enter Row wise values") 
 
@@ -55,7 +55,7 @@ for i in range(a):
 for row in resultant: 
     print(row) 
     </pre>
-    <pre class="quickSort">
+    <pre id="quickSort">
 def partition(array, low, high): 
  
     pivot = array[high] 
@@ -79,7 +79,7 @@ quickSort(data, 0, size -1)
 print('Sorted Array in Ascending Order:')
 print(data)
     </pre>
-    <pre class="tcqiucksort">
+    <pre id="tcqiucksort">
 TIME COMPLEXITY: O(n*logn) . 
 T(n)=2T(n/2)+n - - - - - - - (i)
 Replace n with n/2 in (i)
@@ -107,7 +107,7 @@ T(n)=nT(1)+logn . n
 O(n)=n log n
 
     </pre>
-    <pre class="mergesortinput">
+    <pre id="mergesortinput">
 def merge(arr, l, m, r): 
     n1 = m - l + 1 
     n2 = r - m
@@ -149,7 +149,7 @@ for i in range(n):
 for i in range(n): 
     print("%d" % arr[i],end=" ") 
     </pre>
-    <pre class="tcmergesort">
+    <pre id="tcmergesort">
 T(n)=2T(n/2)+n - - - - - - - (i)
 Replace n with n/2 in (i)
 T(n/2)=2T(n/4)+n/2 - - - - - - (ii)
@@ -175,7 +175,7 @@ T(n)=nT(1)+logn . n
     =n+n log n
 O(n)=n log n
     </pre>
-    <pre class="linearsearchinput">
+    <pre id="linearsearchinput">
 def linearsearch(mylist,n,x):
     for i in range(0,n):
         if(mylist[i]==x):
@@ -191,7 +191,7 @@ if(result==-1):
 else:
     print("Element is present at index",result)
     </pre>
-    <pre class="binarysearchinput">
+    <pre id="binarysearchinput">
 def binary_search(arr,low,high,x):
     if high>=low:
         mid=(high+low)//2
@@ -212,7 +212,7 @@ if result!=-1:
 else:
     print("Element is not found")
     </pre>
-    <pre class="tcbinarysearch">
+    <pre id="tcbinarysearch">
 T(n)=T(n/2)+1 - - - - - - - (i)
 Replace n with n/2 in (i)
 T(n/2)=T(n/4)+1 - - - - - - (ii)
@@ -235,7 +235,7 @@ k=logn
 T(n)=T(1)+logn 
 O(n)= logn
     </pre>
-    <pre class="bfs">
+    <pre id="bfs">
 import collections
 graph={
     'a':['b','c'],
@@ -266,7 +266,7 @@ def bfs(g , root):
 
 bfs(graph,'a')
     </pre>
-    <pre class="dfs">
+    <pre id="dfs">
 graph={
     'a':['b','c'],
     'b':['d','h'],
@@ -288,7 +288,7 @@ def dfs(visited, graph , root):
             dfs(visited , graph , item)           
 dfs(visited,graph,'a')
     </pre>
-    <pre class="insertionofbinarytree">
+    <pre id="insertionofbinarytree">
 class Node:
     def __init__(self,index):
         self.left=None
@@ -335,7 +335,7 @@ insert(r,Node(35))
 insert(r,Node(45))
 inorder(r)
     </pre>
-    <pre class="deletionofbinarytree">
+    <pre id="deletionofbinarytree">
 class Node:
     def __init__(self,index):
         self.index=index
