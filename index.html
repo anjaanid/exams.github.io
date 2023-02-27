@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scam 2023</title>
+</head>
+
+<body>
+    <pre class="keywords">
+        Matrix Multiplication input = matrixmultiplicationinput
+        Quick sort algorithm = quicksort
+        quick sort time complexity = tcqiucksort
+        merge sort algorithm = mergesortinput
+        merge sort time complexity = tcmergesort
+        Linear search input = linearsearchinput
+        binary search input = binarysearchinput
+        binary search time complexity = tcbinarysearch
+        Breadth first search = bfs
+        Depth first search = dfs
+        Write a program to implement insertion operation on binary search tree and also print inorder traversal tree = insertionofbinarytree
+    </pre>
+    <pre class="matrixmultiplicationinput">
+print("Enter order of 1st matrix:") a,b = list(map(int,input().split())) 
+print("Enter Row wise values") 
+
+mat1 = [] 
+for i in range(a):
+    print("Enter row",i,"value:") 
+    row = list(map(int,input().split())) 
+    mat1.append(row) 
+    print("Enter order of 2nd matrix:") 
+    d,c = list(map(int,input().split())) 
+    print("Enter Row wise values") 
+    mat2 = [] 
+for j in range(d) : 
+    print("Enter row",j,"value:") 
+    row = list(map(int,input().split())) 
+    mat2.append(row) 
+    print("Matrix 1:",mat1) 
+    print("Matrix 2:",mat2) 
+    resultant = []
+for i in range(a): 
+    row = [] 
+for j in range(c): 
+    row.append(0) 
+    resultant.append(row) 
+    print("Matrix Multiplication: ")
+for i in range(a):
+    for j in range(c):
+        for k in range(b) : 
+            resultant[i][j] += mat1[i][k] * mat2[k][j] 
+for row in resultant: 
+    print(row) 
+    </pre>
+    <pre class="quickSort">
+def partition(array, low, high): 
+ 
+    pivot = array[high] 
+    i = low - 1
+for j in range(low, high): 
+    if array[j] <= pivot: 
+        i = i + 1
+        (array[i], array[j]) = (array[j], array[i]) 
+        (array[i + 1], array[high]) = (array[high], array[i + 1]) 
+        return i + 1
+ 
+def quickSort(array, low, high):
+    if low < high: 
+        pi = partition(array, low, high)
+        quickSort(array, low, pi -1)
+        quickSort(array, pi + 1, high) 
+        data = [2, 1, 9, 4, 5, 9, -2] 
+print("Unsorted Array") print(data) 
+size = len(data) 
+quickSort(data, 0, size -1) 
+print('Sorted Array in Ascending Order:')
+print(data)
+    </pre>
+    <pre class="tcqiucksort">
+TIME COMPLEXITY: O(n*logn) . 
+T(n)=2T(n/2)+n - - - - - - - (i)
+Replace n with n/2 in (i)
+T(n/2)=2T(n/4)+n/2 - - - - - - (ii)
+Replace n with n/2 in (i)
+T(n/4)=2T(n/8)+n/8 - - - - - - (iii)
+Substituting (ii) in (i)
+T(n)=2[2T(n/4)+n/2]+n 
+ =4T(n/4)+n+n
+ =4T(n/4)+2n - - - - -(iv)
+Substituting (iii) in (iv)
+T(n)=4[2T(n/8)+n/4]+2n 
+ =8T(n/8)+n+2n
+ =8T(n/8)+3n - - - - -(v)
+ =2^3T(n/2^3)+3n
+Replace 3 by k
+T(n)=2^kT(n/2^k)+kn
+Assume
+T(1)=1 
+n/2^k=1
+I.e n=2^k
+k=logn
+T(n)=nT(1)+logn . n
+ =n+n log n
+O(n)=n log n
+
+    </pre>
+    <pre class="mergesortinput">
+def merge(arr, l, m, r): 
+    n1 = m - l + 1 
+    n2 = r - m
+    L = [0] * (n1)
+    R = [0] * (n2)
+for i in range(0, n1):
+    L[i] = arr[l + i] 
+for j in range(0, n2):
+    R[j] = arr[m + 1 + j]
+    i = 0 j = 0 
+    k = l
+    while i < n1 and j < n2:
+        if L[i] <= R[j]:
+            arr[k] = L[i] i += 1 
+        else: 
+            arr[k] = R[j] 
+            j += 1
+        k += 1
+    while i< n1: 
+        arr[k] = L[i] 
+        i += 1 k += 1
+    while j < n2: 
+        arr[k] = R[j] 
+        j += 1 k += 1
+def mergeSort(arr, l, r):
+    if l < r: 
+        m = l+(r-l)//2
+ 
+mergeSort(arr, l, m) 
+mergeSort(arr, m+1, r) 
+merge(arr, l, m, r) 
+arr = [4, 1, 5, 9, 2, 7] 
+n = len(arr)
+print("Given array is")
+for i in range(n): 
+    print("%d" % arr[i],end=" ") 
+    mergeSort(arr, 0, n-1) 
+    print("\n\nSorted array is") 
+for i in range(n): 
+    print("%d" % arr[i],end=" ") 
+    </pre>
+    <pre class="tcmergesort">
+T(n)=2T(n/2)+n - - - - - - - (i)
+Replace n with n/2 in (i)
+T(n/2)=2T(n/4)+n/2 - - - - - - (ii)
+Replace n with n/2 in (i)
+T(n/4)=2T(n/8)+n/8 - - - - - - (iii)
+Substituting (ii) in (i)
+T(n)=2[2T(n/4)+n/2]+n 
+    =4T(n/4)+n+n
+    =4T(n/4)+2n - - - - -(iv)
+Substituting (iii) in (iv)
+T(n)=4[2T(n/8)+n/4]+2n 
+    =8T(n/8)+n+2n
+    =8T(n/8)+3n - - - - -(v)
+    =2^3T(n/2^3)+3n
+Replace 3 by k
+T(n)=2^kT(n/2^k)+kn
+Assume
+T(1)=1 
+n/2^k=1
+I.e n=2^k
+k=logn
+T(n)=nT(1)+logn . n
+    =n+n log n
+O(n)=n log n
+    </pre>
+    <pre class="linearsearchinput">
+def linearsearch(mylist,n,x):
+    for i in range(0,n):
+        if(mylist[i]==x):
+            return i
+    return -1
+
+mylist=[23,78,9,10,89,45]
+x=78
+result=linearsearch(mylist,6,x)
+
+if(result==-1):
+    print("Element is not present in list")
+else:
+    print("Element is present at index",result)
+    </pre>
+    <pre class="binarysearchinput">
+def binary_search(arr,low,high,x):
+    if high>=low:
+        mid=(high+low)//2
+        if arr[mid]==x:
+            return mid
+        elif arr[mid]>x:
+            return binary_search(arr,low,mid-1,x)
+        else:
+            return binary_search(arr,mid+1,high,x)
+    else:
+        return -1
+
+arr=[9,10,13,16,90]
+x=13
+result=binary_search(arr,0,len(arr)-1,x)
+if result!=-1:
+    print("Element is present at index",result)
+else:
+    print("Element is not found")
+    </pre>
+    <pre class="tcbinarysearch">
+T(n)=T(n/2)+1 - - - - - - - (i)
+Replace n with n/2 in (i)
+T(n/2)=T(n/4)+1 - - - - - - (ii)
+Replace n with n/2 in (i)
+T(n/4)=T(n/8)+1 - - - - - - (iii)
+Substituting (ii) in (i)
+T(n)=[T(n/4)+1]+1
+T(n)=T(n/4)+2 - - - - -(iv)
+Substituting (iii) in (iv)
+T(n)=[T(n/8)+1]+2 
+    =T(n/8)+3 - - - - -(v)
+    =T(n/2^3)+3
+Replace 3 by k
+T(n)=T(n/2^k)+k
+Assume 
+T(1)=1
+n/2^k=1
+I.e n=2^k
+k=logn
+T(n)=T(1)+logn 
+O(n)= logn
+    </pre>
+    <pre class="bfs">
+import collections
+graph={
+    'a':['b','c'],
+    'b':['d','h'],
+    'c':['d','e','f','a'],
+    'd':['f','c','b'],
+    'e':['c'],
+    'f':['i','g','d','c'],
+    'g':['f','i','h'],
+    'h':['b','g'],
+    'i':['g','f']
+    
+    
+} 
+
+def bfs(g , root):
+    queue = collections.deque([root])
+    visited=[]
+    while queue:
+        node = queue.popleft()
+        if node not in visited:
+            visited.append(node)
+        for item in g[node]:
+            if item not in visited:
+                queue.append(item)
+
+    print(visited)     
+
+bfs(graph,'a')
+    </pre>
+    <pre class="dfs">
+graph={
+    'a':['b','c'],
+    'b':['d','h'],
+    'c':['d','e','f','a'],
+    'd':['f','c','b'],
+    'e':['c'],
+    'f':['i','g','d','c'],
+    'g':['f','i','h'],
+    'h':['b','g'],
+    'i':['g','f'],
+}
+visited=set()
+
+def dfs(visited, graph , root):
+    if root not in visited:
+        print(root)
+        visited.add(root) 
+        for item in graph[root]:
+            dfs(visited , graph , item)           
+dfs(visited,graph,'a')
+    </pre>
+    <pre class="insertionofbinarytree">
+class Node:
+    def __init__(self,index):
+        self.left=None
+        self.right=None
+        self.val=index
+        
+def insert(root,newnode):
+    if root is None:
+        root=newnode
+    else:
+        if root.val &lt; newnode.val:
+            if root.right is None:
+                root.right=newnode
+            else:
+                insert(root.right,newnode)     
+        else:
+            if root.left is None:
+                root.left=newnode
+            else:
+                insert(root.left,newnode)
+                    
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.val)
+        inorder(root.right)
+            
+def preorder(root):
+    if root:
+        print(root.val)
+        inorder(root.left)
+        inorder(root.right)
+        
+def postorder(root):
+    if root:
+        inorder(root.left)
+        inorder(root.right)
+        print(root.val)
+    
+r=Node(10)
+insert(r,Node(20))
+insert(r,Node(15))
+insert(r,Node(35))
+insert(r,Node(45))
+inorder(r)
+    </pre>
+    <pre class="deletionofbinarytree">
+class Node:
+    def __init__(self,index):
+        self.index=index
+        self.left=None
+        self.right=None
+
+def insert(node,index):
+    if node is None:
+        return Node(index)
+    if index &lt; node.index:
+        node.left=insert(node.left,index)
+    else:
+        node.right=insert(node.right,index)
+    return node
+
+def searchminode(node):
+    current = node
+    while current.left is not None:
+        current=current.left
+    return current
+
+def inorder(root):
+    if root is not None:
+        inorder(root.left)
+        print(root.index)
+        inorder(root.right)
+
+def deletenode(root,index):
+    if root is None:
+        return root
+    if (index&gt;root.index):
+        root.left=deletenode(root.left,index)
+    elif (index>root.index):
+        root.right=deletenode(root.right,index)
+    else:
+        if root.left is None:
+            temp=root.right
+            root=None
+            return temp
+        elif root.right is None:
+            temp=root.left
+            root=None
+            return temp
+        temp=searchminode(root.right)
+        root.index=temp.index
+        root.right=deletenode(root.right,temp.index)
+    return root
+
+root=None
+root=insert(root,100)
+root=insert(root,20)
+root=insert(root,10)
+root=insert(root,50)
+root=insert(root,120)
+root=insert(root,102)
+root=insert(root,180)
+
+
+print("Inorder Traversal of a tree is: ")
+inorder(root)
+print("********")
+print("After deleting the node 180")
+root=deletenode(root,180)
+inorder(root)
+    </pre>
+
+</body>
+
+</html>
